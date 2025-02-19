@@ -153,7 +153,6 @@ del, s, strike {
     background-size: auto var(--liberty-navbar-logo-size, 1.9rem);
     background-position: left center;
     margin: var(--liberty-navbar-logo-margin, 0);
-    padding: var(--liberty-navbar-logo-padding, 0);
 }
 
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item {
@@ -725,7 +724,8 @@ div.scroll-buttons a {
 }
 
 .random-btn {
-    border: 2px;
+    border-width: 2px;
+    border-color: transparent;
     border-radius: 12px;
     margin-right: 5px; 
     background-color: #fff !important;

@@ -151,3 +151,12 @@ body.theseed-dark-mode {
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item {
 	color: #ddd;
 }
+
+.theseed-dark-mode .random-btn-txt {
+	color: #ddd !important;
+}
+
+.thesseed-dark-mode .random-btn {
+	background-color: #1c1d1f !important;
+	border-color: #1c1d1f !important;
+}

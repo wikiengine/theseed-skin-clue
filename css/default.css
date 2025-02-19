@@ -128,7 +128,7 @@ del, s, strike {
     background-color: var(--liberty-brand-color, #4188f1);
     position: absolute;
     z-index: 100;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: none;
     font-weight: bold;
     left: 0;
     right: 0;
@@ -147,7 +147,7 @@ del, s, strike {
 
 .Liberty .nav-wrapper .navbar .navbar-brand {
     height: 2.8rem;
-    width: var(--liberty-navbar-logo-width, 6.6rem);
+    width: var(--liberty-navbar-logo-width, 8rem);
     background-image: var(--liberty-navbar-logo-image, none);
     background-repeat: no-repeat no-repeat;
     background-size: auto var(--liberty-navbar-logo-size, 1.9rem);
@@ -205,8 +205,8 @@ del, s, strike {
     padding: 0.2rem 0.4rem;
     border-color: #e1e8ed;
     border-radius: 0;
-    border-top-left-radius: 0.35rem;
-    border-bottom-left-radius: 0.35rem;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
     float: none;
 }
 
@@ -228,12 +228,12 @@ del, s, strike {
     padding: 0.2rem 0.4rem;
 }
 
-.Liberty .nav-wrapper .navbar .form-inline .btn:hover, .Liberty .nav-wrapper .navbar .form-inline .btn:focus {
+/* .Liberty .nav-wrapper .navbar .form-inline .btn:hover, .Liberty .nav-wrapper .navbar .form-inline .btn:focus {
     background-color: var(--liberty-brand-color, #4188f1);
     color: #fff;
     outline: 0;
     transition: .3s;
-}
+} */
 
 .Liberty .nav-wrapper .navbar .form-inline .btn .fa {
     width: 0.9rem;
@@ -248,6 +248,13 @@ del, s, strike {
     margin-right: 0.5rem;
     font-size: 1rem;
     line-height: 1.4rem;
+}
+
+.Liberty .nav-wrapper .navbar .navbar-login .login-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.4rem;
+    padding: .7rem 0
 }
 
 #login-menu>.fa {
@@ -473,9 +480,11 @@ del, s, strike {
 }
 
 .Liberty .content-wrapper .liberty-content .notification .label {
-    padding: 0.25rem 0.4rem;
+    background-color: #d9edf7;
+    color: #2f4f4f;
+    padding: 10px;
     line-height: 1rem;
-    margin: 0.6rem 0;
+    margin: 0 0 0.6rem 0;
     font-size: 1rem;
     font-weight: normal;
     width: 100%;
@@ -652,7 +661,7 @@ del, s, strike {
 
 .btn {
     box-shadow: none;
-    border-radius: 0.35rem;
+    border-radius: 12px;
 }
 
 .btn:active, .btn:focus {
@@ -713,4 +722,16 @@ div.scroll-buttons a {
 
 .dr-admin {
     margin-left: 5px;
+}
+
+.random-btn {
+    border: 2px;
+    border-radius: 12px;
+    margin-right: 5px; 
+    background-color: #fff !important;
+}
+
+.random-btn-txt {
+    height: 13.5px;
+    color: var(--liberty-brand-color, #4188f1) !important;
 }

@@ -5,7 +5,7 @@
     }
 
     .tools-btn .fa-star,.tools-btn .fa-star-o {
-        color: #ff6200;
+        color: var(--liberty-brand-color, #e69720);
         margin-right: 0.1em;
     }
 

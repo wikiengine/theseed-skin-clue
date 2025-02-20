@@ -16,11 +16,11 @@ const contentTool = {
     switch(page.viewName) {
       case 'wiki':
         if (this.data.date === null) {
-          this.main.push({
+          this.menu.push({
             to: doc_action_link(this.data.document, 'backlink'),
             title: "역링크"
           });
-          this.main.push({
+          this.menu.push({
             to: doc_action_link(this.data.document, 'acl') + '#namespace.read',
             title: "ACL"
           });
@@ -36,9 +36,9 @@ const contentTool = {
           else if (this.data.star_count >= 0) this.main.push({
             to: doc_action_link(this.data.document, 'member/star'),
             tooltip: "Star",
-            html: `<span class="fa fa-star-o" style="color:var(--liberty-brand-color);"></span> <span class="star-count">${this.data.star_count}</span>`
+            html: `<span class="fa fa-star-o"></span> <span class="star-count">${this.data.star_count}</span>`
           });
-          this.main.push({
+          this.menu.push({
             to: doc_action_link(this.data.document, 'backlink'),
             title: "역링크"
           });
@@ -49,21 +49,21 @@ const contentTool = {
           });
           if (this.data.editable === true && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
-            html: `<span style="vertical-align: -2px;margin-right: 3px;font-size: 19px;color:var(--liberty-brand-color);" class="fa ion-md-people"></span> 편집 요청`
+            html: `<span style="vertical-align: -2px;margin-right: 3px;font-size: 19px;" class="fa ion-md-people"></span> 편집 요청`
           });
           else if (this.data.editable === false && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
-            html: `<span class="fa fa-lock" style="margin-right: 3px;color:var(--liberty-brand-color);"></span> 편집`
+            html: `<span class="fa fa-lock" style="margin-right: 3px;"></span> 편집`
           });
           else this.main.push({
               to: doc_action_link(this.data.document, 'edit'),
-              html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;color:var(--liberty-brand-color);" class="fa ion-md-create"></span> 편집`
+              html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa ion-md-create"></span> 편집`
             });
           this.main.push({
             to: doc_action_link(this.data.document, 'history', this.data.rev ? { from: this.data.rev } : undefined),
             title: "역사"
           });
-          this.main.push({
+          this.menu.push({
             to: doc_action_link(this.data.document, 'acl'),
             title: "ACL"
           });
@@ -114,7 +114,7 @@ const contentTool = {
           class: this.page.viewName === 'raw' ? 'disabled' : null,
           title: "RAW"
         });
-        this.main.push({
+        this.menu.push({
           to: doc_action_link(this.data.document, 'blame', uuid ? { uuid } : undefined),
           class: this.page.viewName === 'blame' ? 'disabled' : null,
           title: "blame"
@@ -306,9 +306,9 @@ contentTool.init();
             <div class="dropdown-menu dropdown-menu-right" role="menu">
               <%for(let m of contentTool.menu) {%>
               <%if(m.onclick) {%>
-              <a @click.prevent="<%=m.onclick.toString()%>" href="#" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%></a>
+              <a @click.prevent="<%=m.onclick.toString()%>" href="#" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%><%-m.html%></a>
               <%} else {%>
-              <a href="<%=m.to%>" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%></a>
+              <a href="<%=m.to%>" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%><%-m.html%></a>
               <%}%>
               <%}%>
             </div>

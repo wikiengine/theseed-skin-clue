@@ -240,6 +240,7 @@ del, s, strike {
 } */
 
 .Liberty .nav-wrapper .navbar .form-inline .btn .fa {
+    color: var(--liberty-brand-color, #4188f1);
     width: 0.9rem;
 }
 
@@ -741,11 +742,14 @@ div.scroll-buttons a {
 }
 
 .btn-discuss-progress {
-    background-color: #e0ffe0;
-    color: #fff;
+    background-color: #e0ffe0 !important;
 }
 
 .starred_1 {
     background-color:var(--liberty-brand-color);
     color: #fff;
+}
+
+.theseed-light-mode .btn-group .fa {
+	color: var(--liberty-brand-color, #4188f1);
 }

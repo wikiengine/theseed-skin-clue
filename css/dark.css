@@ -165,3 +165,11 @@ body.theseed-dark-mode {
 .theseed-dark-mode .dr-admin {
 	color: #ddd;
 }
+
+.theseed-dark-mode .btn-group .fa {
+	color: #ddd;
+}
+
+.theseed-dark-mode .content-tools .tools-btn.btn-discuss-progress {
+    background-color: #325a56 !important;
+}

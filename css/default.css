@@ -164,6 +164,11 @@ del, s, strike {
     font-size: 1rem;
 }
 
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .dropdown-menu .fa {
+    margin-right: 0.5rem;
+    font-size: 1.3rem;
+}
+
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link {
     color: #fff;
     font-size: 1rem;
@@ -222,6 +227,7 @@ del, s, strike {
 
 .Liberty .nav-wrapper .navbar .form-inline .btn {
     height: 2rem;
+    width: 2rem;
     color: #4f5b63;
     padding: 0.2rem 0.4rem;
 }
@@ -732,4 +738,14 @@ div.scroll-buttons a {
 .random-btn-txt {
     height: 13.5px;
     color: var(--liberty-brand-color, #4188f1) !important;
+}
+
+.btn-discuss-progress {
+    background-color: #e0ffe0;
+    color: #fff;
+}
+
+.starred_1 {
+    background-color:var(--liberty-brand-color);
+    color: #fff;
 }

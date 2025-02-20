@@ -156,7 +156,12 @@ body.theseed-dark-mode {
 	color: #ddd !important;
 }
 
-.thesseed-dark-mode .random-btn {
+.theseed-dark-mode .Liberty .nav-wrapper .navbar .form-inline .random-btn {
 	background-color: #1c1d1f !important;
-	border-color: #1c1d1f !important;
+	border-color: #e1e8ed !important;
+	border-width: 1px;
+}
+
+.theseed-dark-mode .dr-admin {
+	color: #ddd;
 }

@@ -173,3 +173,17 @@ body.theseed-dark-mode {
 .theseed-dark-mode .content-tools .tools-btn.btn-discuss-progress {
     background-color: #325a56 !important;
 }
+
+.theseed-dark-mode .nav-wrapper .form-inline .input-group .input-group-btn .fa {
+	color: #ddd;
+}
+
+.theseed-dark-mode .notice-icon {
+	color: #777;
+}
+
+.theseed-dark-mode .Liberty .content-wrapper .liberty-content .notification .label {
+	background-color: var(--article-background-color);
+	border: 1px solid #777;
+	color: #ddd;
+}

@@ -442,7 +442,8 @@ del, s, strike {
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item.removed {
-    text-decoration: line-through;
+    text-decoration: none !important;
+    color: #777;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer {
@@ -778,6 +779,7 @@ div.scroll-buttons a {
     text-align: right;
     font-size: .8rem;
     float: right;
+    color: #999;
 }
 
 .recent-item-text {
@@ -786,4 +788,16 @@ div.scroll-buttons a {
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li:hover {
     background: #ddd;
+}
+
+.removed-recent {
+    text-decoration: line-through;
+}
+
+.btn-recentchanges {
+    border: var(--liberty-brand-color);
+    background: var(--liberty-brand-color);
+    margin-right: 20px;
+    margin-top: 5px;
+    float: right;
 }

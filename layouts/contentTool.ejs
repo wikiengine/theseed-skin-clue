@@ -131,17 +131,17 @@ const contentTool = {
         });
         break;
       case 'notfound':
-        this.main.push({
+        this.menu.push({
           to: doc_action_link(this.data.document, 'backlink'),
           title: "역링크"
         });
         if (this.data.edit_acl_message) this.main.push({
           onclick: () => $store.skin.showEditMessage(),
-          html: `<span class="fa fa-lock" style="margin-right: 3px;color:var(--liberty-brand-color);"></span> 편집`
+          html: `<span class="fa fa-lock" style="margin-right: 3px;"></span> 편집`
         });
         else this.main.push({
           to: doc_action_link(this.data.document, 'edit'),
-          html: `<span class="fa fa-edit"></span> 편집`
+          html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa ion-md-create"></span> 편집`
         });
         this.main.push({
           to: doc_action_link(this.data.document, 'discuss'),
@@ -152,7 +152,7 @@ const contentTool = {
           to: doc_action_link(this.data.document, 'history', this.data.rev ? { from: this.data.rev } : undefined),
           title: "역사"
         });
-        this.main.push({
+        this.menu.push({
           to: doc_action_link(this.data.document, 'acl'),
           title: "ACL"
         });

@@ -780,6 +780,7 @@ div.scroll-buttons a {
     font-size: .8rem;
     float: right;
     color: #999;
+    line-height: 2;
 }
 
 .recent-item-text {
@@ -787,7 +788,7 @@ div.scroll-buttons a {
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li:hover {
-    background: #ddd;
+    background: #eee;
 }
 
 .removed-recent {
@@ -800,4 +801,20 @@ div.scroll-buttons a {
     margin-right: 20px;
     margin-top: 5px;
     float: right;
+}
+
+.recent-head-title {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f8fa;
+    border-bottom: 1px solid #e1e8ed;
+    padding: 8px 12px;
+}
+
+.recent-head-text {
+    margin-left: 5px;
+    font-size: 19px;
 }

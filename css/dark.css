@@ -187,3 +187,15 @@ body.theseed-dark-mode {
 	border: 1px solid #777;
 	color: #ddd;
 }
+
+.theseed-dark-mode .recent-head-title {
+	background-color: black;
+}
+
+.theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
+	background-color: black;
+}
+
+.theseed-dark-mode .btn-recentchanges {
+	color: #ddd;
+}

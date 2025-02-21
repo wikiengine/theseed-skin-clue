@@ -22,8 +22,8 @@
                 <template x-for="(r,i) in $store.state.recent.slice(0, <%=typeof limit === 'undefined' ? 15 : limit%>)" :key="i">
                     <li>
                         <a class="recent-item" :class="{ 'removed': r.status === 'delete' }" :href="doc_action_link(r.document, 'w')" @click="$store.state.aClickHandler">
-                            <span :class="{ 'removed-recent': r.status === 'delete' }" class="recent-item-text"><i class="ion-md-paper"></i> <span x-text="r.document"></span></span>
-                            <span class="recent-item-date"><i class="ion-md-time"></i> <span x-html="getFullDateTag(new Date(r.date * 1000), 'relative')"></span></span>
+                            <span :class="{ 'removed-recent': r.status === 'delete' }" class="recent-item-text"><span x-text="r.document"></span></span>
+                            <span class="recent-item-date"><span x-html="getFullDateTag(new Date(r.date * 1000), 'relative')"></span></span>
                         </a>
                     </li>
                 </template>

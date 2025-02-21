@@ -134,15 +134,17 @@ window.requestable = <%=JSON.stringify(requestable)%>;
         <div class="live-recent">
           <div class="live-recent-header">
             <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a id="liberty-recent-tab1" class="nav-link active"><span class="ion-md-compass"></span> 최근 변경</a>
+              <li class="nav-item" style="text-align: left;">
+                <a id="liberty-recent-tab1" class="nav-link active" style="text-align: left;">
+                  <h3 style="margin: 0;">
+                    <span class="ion-md-compass"></span>
+                    <span style="vertical-align: 1px;margin-left: 5px;font-size: 19px;">최근 변경</span>
+                  </h3>
+                </a>
               </li>
             </ul>
           </div>
           <%-include('./layouts/recentCard')%>
-          <div class="live-recent-footer">
-            <a href="/RecentChanges" title="최근 변경내역"><span class="label label-info">더 보기</span></a>
-          </div>
         </div>
       </div>
     </div>
@@ -265,7 +267,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
         <ul class="footer-places"><%-config.footer_html%></ul>
         <ul class="footer-icons">
           <li class="footer-poweredbyico">
-            <a href="//github.com/SomniumDev/haneul-liberty">haneul-liberty</a> | <a href="//github.com/wjdgustn/thetree">the tree</a>
+            <a href="//github.com/VaniIIaDev/thetree-skin-clue">clue</a> | <a href="//github.com/wjdgustn/thetree">the tree</a>
           </li>
         </ul>
       </div>

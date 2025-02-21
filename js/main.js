@@ -32,18 +32,19 @@ const style = document.createElement('style');
 function setStyles() {
     const styles = {
         '--liberty-brand-color': brand_color(),
-        '--liberty-brand-dark-color': selectByTheme(CONFIG['skin.liberty.brand_dark_color_1'] ?? darkenColor(brand_color()), '#16171a'),
-        '--liberty-brand-bright-color': selectByTheme(CONFIG['skin.liberty.brand_bright_color_1'] ?? lightenColor(brand_color()), '#383b40'),
+        '--liberty-brand-dark-color': selectByTheme(CONFIG['skin.clue.brand_dark_color_1'] ?? darkenColor(brand_color()), '#16171a'),
+        '--liberty-brand-bright-color': selectByTheme(CONFIG['skin.clue.brand_bright_color_1'] ?? lightenColor(brand_color()), '#383b40'),
+        '--liberty-brand-notice-color': selectByTheme(CONFIG['skin.clue.brand_notice_color'] ?? '#d9edf7', '#d9edf7'),
         '--liberty-navbar-logo-image': CONFIG['logo_image'] && `url(${CONFIG['logo_image']})`,
-        '--liberty-navbar-logo-minimum-width': CONFIG['skin.liberty.navbar_logo_minimum_width'],
-        '--liberty-navbar-logo-width': CONFIG['skin.liberty.navbar_logo_width'],
-        '--liberty-navbar-logo-size': CONFIG['skin.liberty.navbar_logo_size'],
-        '--liberty-navbar-logo-padding': CONFIG['skin.liberty.navbar_logo_padding'],
-        '--liberty-navbar-logo-margin': CONFIG['skin.liberty.navbar_logo_margin'],
+        '--liberty-navbar-logo-minimum-width': CONFIG['skin.clue.navbar_logo_minimum_width'],
+        '--liberty-navbar-logo-width': CONFIG['skin.clue.navbar_logo_width'],
+        '--liberty-navbar-logo-size': CONFIG['skin.clue.navbar_logo_size'],
+        '--liberty-navbar-logo-padding': CONFIG['skin.clue.navbar_logo_padding'],
+        '--liberty-navbar-logo-margin': CONFIG['skin.clue.navbar_logo_margin'],
         '--brand-color-1': 'var(--liberty-brand-color)',
-        '--brand-color-2': selectByTheme(CONFIG['skin.liberty.brand_color_2'] ?? 'var(--liberty-brand-color)', 'var(--liberty-brand-color)'),
+        '--brand-color-2': selectByTheme(CONFIG['skin.clue.brand_color_2'] ?? 'var(--liberty-brand-color)', 'var(--liberty-brand-color)'),
         '--brand-bright-color-1': 'var(--liberty-brand-bright-color)',
-        '--brand-bright-color-2': selectByTheme(CONFIG['skin.liberty.brand_bright_color_2'] ?? 'var(--liberty-brand-bright-color)', 'var(--liberty-brand-bright-color)'),
+        '--brand-bright-color-2': selectByTheme(CONFIG['skin.clue.brand_bright_color_2'] ?? 'var(--liberty-brand-bright-color)', 'var(--liberty-brand-bright-color)'),
         '--text-color': selectByTheme('#373a3c', '#ddd'),
         '--article-background-color': selectByTheme('#fff', '#000')
     }

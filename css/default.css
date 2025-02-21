@@ -186,7 +186,7 @@ del, s, strike {
 }
 
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .dropdown-menu {
-    border-radius: .25rem !important;
+    border-radius: 12px !important;
     margin-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -758,5 +758,5 @@ div.scroll-buttons a {
 .notice-icon {
     margin-right: 10px;
     font-size: 25px;
-    color: var(--liberty-brand-color);
+    color: var(--liberty-brand-color, #4188f1);
 }

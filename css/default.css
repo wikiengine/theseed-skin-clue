@@ -785,6 +785,11 @@ div.scroll-buttons a {
 
 .recent-item-text {
     font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 190px;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li:hover {

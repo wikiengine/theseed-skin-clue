@@ -286,7 +286,7 @@ contentTool.init();
 %>
 
 <%if(contentTool.main.length) {%>
-  <div class="content-tools" :class="$store.state.getLocalConfig('liberty.admin_convenience') ? '' : 'no-admin-convenience'">
+  <div class="content-tools" :class="$store.state.getLocalConfig('clue.admin_convenience') ? '' : 'no-admin-convenience'">
     <div class="btn-group">
       <%for(let l of contentTool.main) {%>
         <%if(l.onclick) {%>

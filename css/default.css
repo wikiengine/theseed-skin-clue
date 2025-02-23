@@ -833,3 +833,11 @@ div.scroll-buttons a {
 .Liberty .nav-wrapper .navbar .form-inline .btn {
     border-color: transparent;
 }
+
+.dropdown-item {
+    padding: 5px 20px;
+}
+
+.dr-admin .fa {
+    vertical-align: text-bottom;
+}

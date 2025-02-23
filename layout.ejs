@@ -37,7 +37,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
               <span class="fa ion-md-menu" style="font-size:19px;vertical-align: -1.5px;"></span><span class="hide-title">메뉴</span></a>
             <div class="open" x-cloak x-show="open" @click="open = false" @click.outside="open = false">
               <div class="dropdown-menu" role="menu">
-                <div class="dr-admin" style="margin-top: 5px;"><b>일반 도구</b></div>
+                <div class="dr-admin" style="margin-top: 5px;"><span class="dr-admin fa ion-md-list"></span><b>일반 도구</b></div>
                 <div class="dropdown-divider"></div>
                 <a href="/Upload" class="dropdown-item"><span class="fa ion-md-copy"></span> 파일 올리기</a>
                 <div class="dropdown-divider"></div>
@@ -52,7 +52,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
                 <a href="/License" class="dropdown-item"><span class="fa ion-md-pricetag"></span> 라이선스</a>
                 <%if(session.menus.length) {%>
                 <div class="dropdown-divider"></div>
-                <div class="dr-admin"><b>권한 도구</b></div>
+                <div class="dr-admin"><span class="dr-admin fa ion-md-list"></span><b>권한 도구</b></div>
                 <div class="dropdown-divider"></div>
                 <%for(let m of session.menus) {%>
                 <%if(m.t === '권한') {%>

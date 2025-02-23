@@ -44,7 +44,7 @@ const contentTool = {
           });
           if (this.data.editable === true && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
-            html: `<span style="vertical-align: -2px;margin-right: 3px;font-size: 19px;" class="fa ion-md-people"></span> 편집 요청`
+            html: `<span style="vertical-align: -2px;margin-right: 3px;font-size: 19px;" class="ion ion-md-people"></span> 편집 요청`
           });
           else if (this.data.editable === false && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
@@ -52,7 +52,7 @@ const contentTool = {
           });
           else this.main.push({
               to: doc_action_link(this.data.document, 'edit'),
-              html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa ion-md-create"></span> 편집`
+              html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="ion ion-md-create"></span> 편집`
             });
           this.main.push({
             to: doc_action_link(this.data.document, 'discuss'),
@@ -141,7 +141,7 @@ const contentTool = {
         });
         else this.main.push({
           to: doc_action_link(this.data.document, 'edit'),
-          html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa ion-md-create"></span> 편집`
+          html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="ion ion-md-create"></span> 편집`
         });
         this.main.push({
           to: doc_action_link(this.data.document, 'discuss'),

@@ -163,7 +163,17 @@ del, s, strike {
     font-size: 1rem;
 }
 
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .ion {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .dropdown-menu .fa {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .dropdown-menu .ion {
     margin-right: 0.5rem;
     font-size: 1.3rem;
 }
@@ -243,12 +253,23 @@ del, s, strike {
     width: 0.9rem;
 }
 
+.Liberty .nav-wrapper .navbar .form-inline .btn .ion {
+    color: var(--liberty-brand-color, #4188f1);
+    width: 0.9rem;
+}
+
 .Liberty .nav-wrapper .navbar .navbar-login {
     float: right;
     padding-left: 0.8rem;
 }
 
 .Liberty .nav-wrapper .navbar .navbar-login .fa {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+.Liberty .nav-wrapper .navbar .navbar-login .ion {
     margin-right: 0.5rem;
     font-size: 1rem;
     line-height: 1.4rem;
@@ -262,6 +283,12 @@ del, s, strike {
 }
 
 #login-menu>.fa {
+    line-height: 0.6rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#login-menu>.ion {
     line-height: 0.6rem;
     height: 1.5rem;
     width: 1.5rem;
@@ -738,6 +765,7 @@ div.scroll-buttons a {
 
 .dr-admin {
     margin-left: 5px;
+    padding: 4px 20px 5px 0px;
 }
 
 .random-btn {
@@ -762,6 +790,10 @@ div.scroll-buttons a {
 }
 
 .theseed-light-mode .btn-group .fa {
+	color: var(--liberty-brand-color, #4188f1);
+}
+
+.theseed-light-mode .btn-group .ion {
 	color: var(--liberty-brand-color, #4188f1);
 }
 
@@ -839,4 +871,10 @@ div.scroll-buttons a {
 
 .dr-admin .fa {
     vertical-align: text-bottom;
+    padding: 0;
 }
+
+.dr-admin .ion {
+    vertical-align: text-bottom;
+}
+

@@ -8,7 +8,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
 
 <style>
   @import "/skins/<%=skin%>/css/bootstrap.min.css";
-  @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css";
+  @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
   @import "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css";
   @import "/skins/<%=skin%>/css/default.css";
   @import '/skins/<%=skin%>/css/default_mobile.css';
@@ -26,52 +26,52 @@ window.requestable = <%=JSON.stringify(requestable)%>;
       <a class="navbar-brand" href="/"><%=config.logo_text%></a>
       <ul class="nav navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/RecentChanges"><span class="fa ion-md-compass" style="font-size: 17px;"></span><span class="hide-title">최근 변경</span></a>
+          <a class="nav-link" href="/RecentChanges"><span class="fa fa-solid fa-compass" style="font-size: 17px;"></span><span class="hide-title">최근 변경</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/RecentDiscuss"><span style="font-size:17px;" class="fa fa-commenting"></span><span class="hide-title">최근 토론</span></a>
+          <a class="nav-link" href="/RecentDiscuss"><span style="font-size:17px;" class="fa fa-solid fa-commenting"></span><span class="hide-title">최근 토론</span></a>
         </li>
         <li class="nav-item" x-data="{ open: false }">
           <div class="dropdown">
             <a class="nav-link dropdown-toggle dropdown-toggle-fix" href="#" @click.prevent="open = !open">
-              <span class="fa ion-md-menu" style="font-size:19px;vertical-align: -1.5px;"></span><span class="hide-title">메뉴</span></a>
+              <span class="fa fa-solid fa-bars"></span><span class="hide-title">메뉴</span></a>
             <div class="open" x-cloak x-show="open" @click="open = false" @click.outside="open = false">
               <div class="dropdown-menu" role="menu">
-                <div class="dr-admin" style="margin-top: 5px;"><span class="dr-admin fa ion-md-list"></span><b>일반 도구</b></div>
+                <div class="dr-admin" style="margin-top: 5px;"><span class="dr-admin fa fa-solid fa-wrench"></span><b>일반 도구</b></div>
                 <div class="dropdown-divider"></div>
-                <a href="/Upload" class="dropdown-item"><span class="fa ion-md-copy"></span> 파일 올리기</a>
+                <a href="/Upload" class="dropdown-item"><span class="fa fa-solid fa-file-upload"></span> 파일 올리기</a>
                 <div class="dropdown-divider"></div>
-                <a href="/NeededPages" class="dropdown-item"><span class="fa ion-md-remove-circle-outline"></span> 작성이 필요한 문서</a>
-                <a href="/OrphanedPages" class="dropdown-item"><span class="fa ion-md-warning"></span> 고립된 문서</a>
-                <a href="/UncategorizedPages" class="dropdown-item"><span class="fa ion-md-list-box"></span> 분류가 되지 않은 문서</a>
-                <a href="/OldPages" class="dropdown-item"><span class="fa ion-md-undo"></span> 편집된 지 오래된 문서</a>
-                <a href="/ShortestPages" class="dropdown-item"><span class="fa ion-md-thumbs-down"></span> 내용이 짧은 문서</a>
-                <a href="/LongestPages" class="dropdown-item"><span class="fa ion-md-thumbs-up"></span> 내용이 긴 문서</a>
-                <a href="/BlockHistory" class="dropdown-item"><span class="fa ion-md-construct"></span> 차단 내역</a>
-                <a href="/RandomPage" class="dropdown-item"><span class="fa ion-md-shuffle"></span> RandomPage</a>
-                <a href="/License" class="dropdown-item"><span class="fa ion-md-pricetag"></span> 라이선스</a>
+                <a href="/NeededPages" class="dropdown-item"><span class="fa fa-seedling fa-solid"></span> 작성이 필요한 문서</a>
+                <a href="/OrphanedPages" class="dropdown-item"><span class="fa fa-solid fa-triangle-exclamation"></span> 고립된 문서</a>
+                <a href="/UncategorizedPages" class="dropdown-item"><span class="fa fa-list-check fa-solid"></span> 분류가 되지 않은 문서</a>
+                <a href="/OldPages" class="dropdown-item"><span class="fa fa-hourglass-3 fa-solid"></span> 편집된 지 오래된 문서</a>
+                <a href="/ShortestPages" class="dropdown-item"><span class="fa fa-solid fa-thumbs-down"></span> 내용이 짧은 문서</a>
+                <a href="/LongestPages" class="dropdown-item"><span class="fa fa-solid fa-thumbs-up"></span> 내용이 긴 문서</a>
+                <a href="/BlockHistory" class="dropdown-item"><span class="fa fa-ban fa-solid"></span> 차단 내역</a>
+                <a href="/RandomPage" class="dropdown-item"><span class="fa fa-share fa-solid"></span> RandomPage</a>
+                <a href="/License" class="dropdown-item"><span class="fa fa-copyright fa-solid"></span> 라이선스</a>
                 <%if(session.menus.length) {%>
                 <div class="dropdown-divider"></div>
-                <div class="dr-admin"><span class="dr-admin fa ion-md-list"></span><b>권한 도구</b></div>
+                <div class="dr-admin"><span class="dr-admin fa fa-hammer fa-solid"></span><b>권한 도구</b></div>
                 <div class="dropdown-divider"></div>
                 <%for(let m of session.menus) {%>
                 <%if(m.t === '권한') {%>
-                <a href="<%=m.l%>" class="dropdown-item"><span class="fa ion-md-options"></span> <%=m.t%></a>
+                  <a href="/admin/grant" class="dropdown-item"><span class="fa fa-solid fa-user-gear"></span> 권한</a>
                 <%}%>
                 <%if(m.t === '로그인 기록 조회') {%>
-                  <a href="<%=m.l%>" class="dropdown-item"><span class="fa ion-md-paper"></span> <%=m.t%></a>
+                  <a href="/admin/login_history" class="dropdown-item"><span class="fa fa-solid fa-user-check"></span> 로그인 기록 조회</a>
                 <%}%>
                 <%if(m.t === 'ACL Group') {%>
-                <a href="<%=m.l%>" class="dropdown-item"><span class="fa ion-md-person-add"></span> <%=m.t%></a>
+                  <a href="/aclgroup" class="dropdown-item"><span class="fa fa-solid fa-user-minus"></span> ACL Group</a>
                 <%}%>
                 <%if(m.t === '일괄 되돌리기') {%>
-                <a href="<%=m.l%>" class="dropdown-item"><span class="fa ion-md-refresh"></span> <%=m.t%></a>
+                  <a href="/admin/batch_revert" class="dropdown-item"><span class="fa fa-clock-rotate-left fa-solid"></span> 일괄 되돌리기</a>
                 <%}%>
                 <%if(m.t === '설정') {%>
-                  <a href="<%=m.l%>" class="dropdown-item"><span class="fa ion-md-settings"></span> <%=m.t%></a>
+                  <a href="/admin/config" class="dropdown-item"><span class="fa fa-gear fa-solid"></span> 설정</a>
                 <%}%>
                 <%if(m.t === '개발자 설정') {%>
-                  <a href="<%=m.l%>" class="dropdown-item"><span class="fa ion-md-code"></span> <%=m.t%></a>
+                  <a href="/admin/developer" class="dropdown-item"><span class="fa fa-code fa-solid"></span> 개발자 설정</a>
                 <%}%>
                 <%}%>
                 <%}%>
@@ -86,7 +86,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
             <%if(session.gravatar_url) {%>
               <img class="profile-img" src="<%=session.gravatar_url%>">
             <%} else {%>
-              <span class="fa fa-user login-icon"></span>
+              <span class="fa fa-solid fa-user login-icon"></span>
             <%}%>
           </a>
           <div class="open" x-cloak x-show="open" @click="open = false" @click.outside="open = false">
@@ -101,25 +101,25 @@ window.requestable = <%=JSON.stringify(requestable)%>;
               </div>
               <%}%>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item" @click.prevent="$store.state.openSettingModal"><span class="fa fa-gear"></span> 설정</a>
-              <a x-show="$store.state.currentTheme === 'light'" href="#" class="dropdown-item" @click.prevent="$store.state.setLocalConfig('wiki.theme', 'dark')"><span class="fa fa-moon-o"></span> 다크 테마로</a>
-              <a x-show="$store.state.currentTheme === 'dark'" href="#" class="dropdown-item" @click.prevent="$store.state.setLocalConfig('wiki.theme', 'light')"><span class="fa fa-sun-o"></span> 라이트 테마로</a>
+              <a href="#" class="dropdown-item" @click.prevent="$store.state.openSettingModal"><span class="fa fa-solid fa-gear"></span> 설정</a>
+              <a x-show="$store.state.currentTheme === 'light'" href="#" class="dropdown-item" @click.prevent="$store.state.setLocalConfig('wiki.theme', 'dark')"><span class="fa fa-solid fa-moon"></span> 다크 테마로</a>
+              <a x-show="$store.state.currentTheme === 'dark'" href="#" class="dropdown-item" @click.prevent="$store.state.setLocalConfig('wiki.theme', 'light')"><span class="fa fa-solid fa-sun"></span> 라이트 테마로</a>
               <div class="dropdown-divider"></div>
               <%if(session.account.type === UserTypes.Account) {%>
-                <a href="/member/mypage" class="dropdown-item"><span class="fa fa-tags"></span> 내 정보</a>
-                <a :href="doc_action_link(user_doc($store.state.session.account.name), 'w')" class="dropdown-item"><span class="fa fa-file-text-o"></span> 사용자 문서</a>
-                <a href="/member/starred_documents" class="dropdown-item"><span class="fa fa-star-o"></span> 내 문서함</a>
+                <a href="/member/mypage" class="dropdown-item"><span class="fa fa-solid fa-user-gear"></span> 내 정보</a>
+                <a :href="doc_action_link(user_doc($store.state.session.account.name), 'w')" class="dropdown-item"><span class="fa fa-solid fa-file-text"></span> 사용자 문서</a>
+                <a href="/member/starred_documents" class="dropdown-item"><span class="fa fa-solid fa-folder-open"></span> 내 문서함</a>
                 <div class="dropdown-divider"></div>
               <%}%>
               <%if(session.account.uuid) {%>
-                <a class="dropdown-item" :href="contribution_link($store.state.session.account.uuid)"><span class="fa fa-pencil"></span> 내 문서 기여 목록</a>
-                <a class="dropdown-item" :href="contribution_link_discuss($store.state.session.account.uuid)"><span class="fa fa-commenting"></span> 토론 기여 목록</a>
+                <a class="dropdown-item" :href="contribution_link($store.state.session.account.uuid)"><span class="fa fa-solid fa-edit"></span> 내 문서 기여 목록</a>
+                <a class="dropdown-item" :href="contribution_link_discuss($store.state.session.account.uuid)"><span class="fa fa-solid fa-commenting"></span> 토론 기여 목록</a>
                 <div class="dropdown-divider"></div>
               <%}%>
               <%if(session.account.type === UserTypes.Account) {%>
-                <a href="/member/logout" data-add-redirect class="dropdown-item"><span class="fa fa-sign-out"></span> 로그아웃</a>
+                <a href="/member/logout" data-add-redirect class="dropdown-item"><span class="fa fa-solid fa-sign-out"></span> 로그아웃</a>
               <%} else {%>
-                <a href="/member/login" data-add-redirect class="dropdown-item"><span class="fa fa-sign-in"></span> 로그인</a>
+                <a href="/member/login" data-add-redirect class="dropdown-item"><span class="fa fa-solid fa-sign-in"></span> 로그인</a>
               <%}%>
             </div>
           </div>
@@ -152,7 +152,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
     <div id="content" class="container-fluid liberty-content">
       <%if(config.sitenotice) {%>
       <div id="site-notice" class="notification">
-        <span class="label"><span class="fa ion-md-alert notice-icon"></span> <span style="vertical-align: 4px;"><%-config.sitenotice%></span></span>
+        <span class="label"><span class="ion ion-md-alert notice-icon"></span> <span style="vertical-align: 4px;"><%-config.sitenotice%></span></span>
       </div>
       <%}%>
       <div class="liberty-content-header">
@@ -321,8 +321,8 @@ window.requestable = <%=JSON.stringify(requestable)%>;
     </div>
   </div>
   <div class="scroll-buttons">
-    <a class="scroll-toc" href="#toc"><i class="fa fa-list-alt" aria-hidden="true"></i></a>
-    <a id="left" class="scroll-button" href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-    <a id="right" class="scroll-bottom" href="#bottom"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+    <a class="scroll-toc" href="#toc"><i class="fa fa-solid fa-list-alt" aria-hidden="true"></i></a>
+    <a id="left" class="scroll-button" href="#top"><i class="fa fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    <a id="right" class="scroll-bottom" href="#bottom"><i class="fa fa-solid fa-arrow-down" aria-hidden="true"></i></a>
   </div>
 </div>

@@ -823,3 +823,8 @@ div.scroll-buttons a {
     margin-left: 5px;
     font-size: 19px;
 }
+
+.header-date-text {
+    padding-top: 5px;
+    color: #777;
+}

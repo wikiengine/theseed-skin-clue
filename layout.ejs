@@ -159,7 +159,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
         <%-include('./layouts/contentTool')%>
         <div class="title">
           <%if(page.data.document && page.viewName !== 'error') {%>
-          <h1>
+          <h1 style="margin-bottom: 10px;">
             <a href="<%=doc_action_link(page.data.document, 'w')%>">
               <%if(page.data.document.forceShowNamespace !== false) {%><span class="namespace"><%=page.data.document.namespace%>:</span><%}%><%=page.data.document.title%>
             </a>
@@ -201,6 +201,19 @@ window.requestable = <%=JSON.stringify(requestable)%>;
               <small>(r<%=page.data.rev%> 판)</small>
             <%}%>
           </h1>
+          <%if(page.viewName === 'wiki' && page.data.date) {%>
+            <% 
+              let timestamp = !isNaN(page.data.date) ? page.data.date : Math.floor(new Date(page.data.date).getTime() / 1000);
+              let timeTag = getFullDateTag(timestamp);
+              let timeTag2 = getFullDateTag(page.data.date);
+            %>
+          
+            <% if (page.data.rev) { %>
+              <span class="header-date-text">편집 시각: (<%- getFullDateTag(timestamp, 'relative') %>)</span>
+            <% } else { %>
+              <span class="header-date-text"><span x-html="'마지막 편집: ' + getFullDateTag(new Date(<%= timestamp %>), 'relative')"></span></span>
+            <% } %>     
+          <%}%>
           <%} else {%>
           <h1><%=page.title%></h1>
           <%}%>
@@ -257,14 +270,6 @@ window.requestable = <%=JSON.stringify(requestable)%>;
         <div class="clearfix"></div>
       </div>
       <div id="bottom" class="liberty-footer">
-        <%if(page.viewName === 'wiki' && page.data.date) {%>
-          <ul class="footer-info">
-            <%const timeTag = getFullDateTag(page.data.date);%>
-            <%if(page.data.rev) {%><li class="footer-info-lastmod">이 리비전은 <%-timeTag%>에 편집되었습니다.</li>
-            <%} else {%><li v-else class="footer-info-lastmod">이 문서는 <%-timeTag%>에 마지막으로 편집되었습니다.</li><%}%>
-            <li class="footer-info-copyright"><%-config.copyright_text%></li>
-          </ul>
-        <%}%>
         <ul class="footer-places"><%-config.footer_html%></ul>
         <ul class="footer-icons">
           <li class="footer-poweredbyico">
@@ -286,7 +291,7 @@ window.requestable = <%=JSON.stringify(requestable)%>;
             </li>
           </ul>
         </div>
-        <%-include('./layouts/recentCard', {limit:12})%>
+        <%-include('./layouts/recentCard', {limit:13})%>
       </div>
     </div>
   </div>

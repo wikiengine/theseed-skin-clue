@@ -31,12 +31,12 @@ const contentTool = {
             to: doc_action_link(this.data.document, 'member/unstar'),
             tooltip: "Unstar",
             class: 'starred_1',
-            html: `<span class="fa fa-star" style="color:#fff;"></span> <span class="star-count">${this.data.star_count}</span>`
+            html: `<span class="fa fa-solid fa-star" style="color:#fff;"></span> <span class="star-count">${this.data.star_count}</span>`
           });
           else if (this.data.star_count >= 0) this.main.push({
             to: doc_action_link(this.data.document, 'member/star'),
             tooltip: "Star",
-            html: `<span class="fa fa-star-o"></span> <span class="star-count">${this.data.star_count}</span>`
+            html: `<span class="fa fa-regular fa-star"></span> <span class="star-count">${this.data.star_count}</span>`
           });
           this.menu.push({
             to: doc_action_link(this.data.document, 'backlink'),
@@ -44,7 +44,7 @@ const contentTool = {
           });
           if (this.data.editable === true && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
-            html: `<span style="vertical-align: -2px;margin-right: 3px;font-size: 19px;" class="ion ion-md-people"></span> 편집 요청`
+            html: `<span style="vertical-align: -2px;margin-right: 3px;font-size: 19px;" class="fa fa-solid fa-edit"></span> 편집 요청`
           });
           else if (this.data.editable === false && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
@@ -52,7 +52,7 @@ const contentTool = {
           });
           else this.main.push({
               to: doc_action_link(this.data.document, 'edit'),
-              html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="ion ion-md-create"></span> 편집`
+              html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa fa-soild fa-pen"></span> 편집`
             });
           this.main.push({
             to: doc_action_link(this.data.document, 'discuss'),
@@ -137,11 +137,11 @@ const contentTool = {
         });
         if (this.data.edit_acl_message) this.main.push({
           onclick: () => $store.skin.showEditMessage(),
-          html: `<span class="fa fa-lock" style="margin-right: 3px;"></span> 편집`
+          html: `<span class="fa fa-solid fa-lock" style="margin-right: 3px;"></span> 편집`
         });
         else this.main.push({
           to: doc_action_link(this.data.document, 'edit'),
-          html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="ion ion-md-create"></span> 편집`
+          html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa fa-solid fa-pen"></span> 편집`
         });
         this.main.push({
           to: doc_action_link(this.data.document, 'discuss'),

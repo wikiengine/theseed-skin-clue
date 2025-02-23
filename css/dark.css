@@ -10,7 +10,7 @@ body.theseed-dark-mode {
 }
 
 .theseed-dark-mode .Liberty .content-wrapper .liberty-content .liberty-content-header {
-	background-color: black;
+	background-color: var(--article-background-color);
 }
 
 .theseed-dark-mode .Liberty .content-wrapper .liberty-content .liberty-content-header .title > h1 {
@@ -18,12 +18,12 @@ body.theseed-dark-mode {
 }
 
 .theseed-dark-mode .Liberty .content-wrapper .liberty-content .liberty-content-main {
-	background-color: black;
+	background-color: var(--article-background-color);
 	color: #ddd;
 }
 
 .theseed-dark-mode .Liberty .content-wrapper .liberty-footer {
-	background-color: black;
+	background-color: var(--article-background-color);
 	color: #ddd;
 }
 
@@ -45,12 +45,12 @@ body.theseed-dark-mode {
 }
 
 .theseed-dark-mode .btn.btn-secondary.tools-btn {
-	background: black;
+	background-color: var(--article-background-color);
 	color: #ddd;
 }
 
 .theseed-dark-mode button.btn.btn-secondary.tools-btn.dropdown-toggle {
-	background: black;
+	background-color: var(--article-background-color);
 	color: #ddd;
 }
 
@@ -84,7 +84,7 @@ body.theseed-dark-mode {
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active,
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus,
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover {
-	background: black;
+	background-color: var(--article-background-color);
 	color: #ddd;
 }
 
@@ -93,11 +93,11 @@ body.theseed-dark-mode {
 }
 
 .theseed-dark-mode ul#live-recent-list {
-	background-color: black;
+	background-color: var(--article-background-color);
 }
 
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer {
-	background-color: black;
+	background-color: var(--article-background-color);
 }
 
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label {
@@ -125,7 +125,7 @@ body.theseed-dark-mode {
 }
 
 .theseed-dark-mode .Liberty .nav-wrapper .navbar .form-inline .form-control {
-	background-color: black;
+	background-color: var(--article-background-color);
 	color: #ddd;
 }
 
@@ -134,7 +134,7 @@ body.theseed-dark-mode {
 }
 
 .theseed-dark-mode .Liberty .nav-wrapper .navbar .form-inline .btn {
-	background-color: black;
+	background-color: var(--article-background-color);
 	color: #ddd;
 }
 
@@ -189,11 +189,11 @@ body.theseed-dark-mode {
 }
 
 .theseed-dark-mode .recent-head-title {
-	background-color: black;
+	background-color: var(--article-background-color);
 }
 
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
-	background-color: black;
+	background-color: var(--article-background-color);
 }
 
 .theseed-dark-mode .btn-recentchanges {

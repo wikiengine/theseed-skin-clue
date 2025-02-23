@@ -46,7 +46,7 @@ function setStyles() {
         '--brand-bright-color-1': 'var(--liberty-brand-bright-color)',
         '--brand-bright-color-2': selectByTheme(CONFIG['skin.clue.brand_bright_color_2'] ?? 'var(--liberty-brand-bright-color)', 'var(--liberty-brand-bright-color)'),
         '--text-color': selectByTheme('#373a3c', '#ddd'),
-        '--article-background-color': selectByTheme('#fff', '#000')
+        '--article-background-color': selectByTheme('#fff', '#1d2023')
     }
 
     style.textContent = `.Liberty {${Object.keys(styles).filter(a => styles[a]).map(a => `${a}:${styles[a]};`).join('')}}`;

@@ -277,7 +277,32 @@ window.requestable = <%=JSON.stringify(requestable)%>;
           </li>
         </ul>
       </div>
-      <div x-cloak x-show="$store.state.localConfig['clue.sidebar'] === 'footer'" style="border-radius: 12px;margin-top: 20px;" class="footer-recent">
+      <div 
+    x-cloak 
+    x-show="(window.innerWidth <= 768 && $store.state.localConfig['clue.sidebar'] !== 'hide') 
+            || (window.innerWidth > 768 && $store.state.localConfig['clue.sidebar'] === 'footer')"
+    x-init="() => { 
+        function updateVisibility() {
+            if (window.innerWidth <= 768) {
+                if ($store.state.localConfig['clue.sidebar'] !== 'hide') {
+                    $el.style.display = 'block';
+                } else {
+                    $el.style.display = 'none';
+                }
+            } else {
+                if ($store.state.localConfig['clue.sidebar'] === 'footer') {
+                    $el.style.display = 'block';
+                } else {
+                    $el.style.display = 'none';
+                }
+            }
+        }
+        updateVisibility();
+        window.addEventListener('resize', updateVisibility);
+    }"
+    style="border-radius: 12px; margin-top: 20px;"
+    class="footer-recent"
+>
         <div class="live-recent-header">
           <ul class="nav nav-tabs">
             <li class="nav-item" style="text-align: left;width: 100%;">

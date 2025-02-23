@@ -206,7 +206,7 @@ del, s, strike {
     font-size: 0.8rem;
     height: 2rem;
     width: 10.8rem;
-    border-color: #e1e8ed;
+    border-color: transparent;
     border-radius: 0;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -828,4 +828,8 @@ div.scroll-buttons a {
 .header-date-text {
     padding-top: 5px;
     color: #777;
+}
+
+.Liberty .nav-wrapper .navbar .form-inline .btn {
+    border-color: transparent;
 }

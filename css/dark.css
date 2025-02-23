@@ -158,8 +158,16 @@ body.theseed-dark-mode {
 
 .theseed-dark-mode .Liberty .nav-wrapper .navbar .form-inline .random-btn {
 	background-color: #1c1d1f !important;
-	border-color: #e1e8ed !important;
+	border-color: transparent;
 	border-width: 1px;
+}
+
+.theseed-dark-mode .Liberty .nav-wrapper .navbar .form-inline .form-control {
+	border-color: transparent;
+}
+
+.theseed-dark-mode .Liberty .nav-wrapper .navbar .form-inline .btn {
+	border-color: transparent;
 }
 
 .theseed-dark-mode .dr-admin {

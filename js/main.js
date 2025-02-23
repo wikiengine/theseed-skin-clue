@@ -74,7 +74,7 @@ document.addEventListener('alpine:init', () => {
 document.addEventListener('thetree:pageLoad', () => {
     Alpine.store('skin').hideEditMessage();
 
-    if(State.getLocalConfig('liberty.reset_search_on_move') !== false) {
+    if(State.getLocalConfig('clue.reset_search_on_move') !== false) {
         const searchInput = document.getElementById('searchInput');
         searchInput.value = '';
         searchInput.dispatchEvent(new Event('input'));

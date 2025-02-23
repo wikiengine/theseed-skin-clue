@@ -211,3 +211,7 @@ body.theseed-dark-mode {
 .theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li:hover {
 	background-color: #333
 }
+
+.theseed-dark-mode .fa-star {
+	color: #ddd;
+}

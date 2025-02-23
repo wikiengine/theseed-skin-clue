@@ -73,6 +73,18 @@
     .Liberty .content-wrapper .liberty-content .liberty-content-header .title {
         padding: 0.5rem;
         min-height: 48px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .Liberty .content-wrapper .footer-recent {
+        display: block !important;
+    }
+
+    .Liberty .content-wrapper .liberty-content .notification .label {
+        border-radius: 0;
+        margin-top: -9px !important;
+        margin: 0;
     }
 
     .Liberty .content-wrapper .liberty-content .liberty-content-header .contentSub {

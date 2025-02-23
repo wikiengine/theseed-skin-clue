@@ -207,3 +207,7 @@ body.theseed-dark-mode {
 .theseed-dark-mode .btn-recentchanges {
 	color: #ddd;
 }
+
+.theseed-dark-mode .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li:hover {
+	background-color: #333
+}

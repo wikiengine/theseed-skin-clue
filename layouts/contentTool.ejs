@@ -18,11 +18,11 @@ const contentTool = {
         if (this.data.date === null) {
           this.menu.push({
             to: doc_action_link(this.data.document, 'backlink'),
-            title: "역링크"
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-anchor"></span> 역링크`
           });
           this.menu.push({
             to: doc_action_link(this.data.document, 'acl') + '#namespace.read',
-            title: "ACL"
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-file-shield"></span> ACL`
           });
           break;
         }
@@ -31,16 +31,16 @@ const contentTool = {
             to: doc_action_link(this.data.document, 'member/unstar'),
             tooltip: "Unstar",
             class: 'starred_1',
-            html: `<span class="fa fa-solid fa-star" style="font-size:1rem;color:#fff;"></span> <span class="star-count">${this.data.star_count}</span>`
+            html: `<span class="fa fa-solid fa-star" style="color: #fff"></span> <span class="star-count">${this.data.star_count}</span>`
           });
           else if (this.data.star_count >= 0) this.main.push({
             to: doc_action_link(this.data.document, 'member/star'),
             tooltip: "Star",
-            html: `<span class="fa fa-regular fa-star" style="font-size:1rem;"></span> <span class="star-count">${this.data.star_count}</span>`
+            html: `<span class="fa fa-regular fa-star"></span> <span class="star-count">${this.data.star_count}</span>`
           });
           this.menu.push({
             to: doc_action_link(this.data.document, 'backlink'),
-            title: "역링크"
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-anchor"></span> 역링크`
           });
           if (this.data.editable === true && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
@@ -69,12 +69,12 @@ const contentTool = {
           });
           this.menu.push({
             to: doc_action_link(this.data.document, 'acl'),
-            title: "ACL"
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-file-shield"></span> ACL`
           });
           if (this.data.user) {
             this.menu.push({
               to: contribution_link(this.data.user.uuid),
-              title: "기여 목록"
+              html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-user-edit"></span> 기여 목록`
             });
             if (session.quick_block) {
               this.menu.push({
@@ -83,7 +83,7 @@ const contentTool = {
                   username: page.data.document.title,
                   note: `${doc_fulltitle(page.data.document)} 긴급차단`
                 }),
-                title: "사용자 차단"
+                html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-user-minus"></span> 사용자 차단`
               });
               this.menu.push({
                 class: 'admin',

@@ -136,3 +136,8 @@
     vertical-align: -8px;
     font-size: 1rem;
 }
+
+.btn-group > .btn:last-of-type:not(.tools-menu) {
+    border-top-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+}

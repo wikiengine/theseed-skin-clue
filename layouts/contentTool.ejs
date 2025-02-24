@@ -31,12 +31,12 @@ const contentTool = {
             to: doc_action_link(this.data.document, 'member/unstar'),
             tooltip: "Unstar",
             class: 'starred_1',
-            html: `<span class="fa fa-solid fa-star" style="color:#fff;"></span> <span class="star-count">${this.data.star_count}</span>`
+            html: `<span class="fa fa-solid fa-star" style="font-size:1rem;color:#fff;"></span> <span class="star-count">${this.data.star_count}</span>`
           });
           else if (this.data.star_count >= 0) this.main.push({
             to: doc_action_link(this.data.document, 'member/star'),
             tooltip: "Star",
-            html: `<span class="fa fa-regular fa-star"></span> <span class="star-count">${this.data.star_count}</span>`
+            html: `<span class="fa fa-regular fa-star" style="font-size:1rem;"></span> <span class="star-count">${this.data.star_count}</span>`
           });
           this.menu.push({
             to: doc_action_link(this.data.document, 'backlink'),
@@ -44,24 +44,28 @@ const contentTool = {
           });
           if (this.data.editable === true && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
-            html: `<span style="vertical-align: -2px;margin-right: 3px;font-size: 19px;" class="fa fa-solid fa-edit"></span> 편집 요청`
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-edit"></span> 편집 요청`
           });
           else if (this.data.editable === false && this.data.edit_acl_message) this.main.push({
             onclick: () => $store.skin.showEditMessage(),
-            html: `<span class="fa fa-lock" style="margin-right: 3px;"></span> 편집`
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-lock"></span> 편집`
           });
           else this.main.push({
               to: doc_action_link(this.data.document, 'edit'),
-              html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa fa-soild fa-pen"></span> 편집`
+              html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-soild fa-pen"></span> 편집`
             });
-          this.main.push({
+          if (this.data.discuss_progress === true) this.main.push({
             to: doc_action_link(this.data.document, 'discuss'),
-            class: this.data.discuss_progress ? 'btn-discuss-progress' : null,
-            title: "토론"
+            class: 'btn-discuss-progress',
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-soild fa-commenting"></span> 토론 중`
+          });
+          else this.main.push({
+            to: doc_action_link(this.data.document, 'discuss'),
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-soild fa-comment"></span> 토론`
           });
           this.main.push({
             to: doc_action_link(this.data.document, 'history', this.data.rev ? { from: this.data.rev } : undefined),
-            title: "역사"
+            html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-soild fa-calendar"></span> 역사`
           });
           this.menu.push({
             to: doc_action_link(this.data.document, 'acl'),
@@ -137,11 +141,11 @@ const contentTool = {
         });
         if (this.data.edit_acl_message) this.main.push({
           onclick: () => $store.skin.showEditMessage(),
-          html: `<span class="fa fa-solid fa-lock" style="margin-right: 3px;"></span> 편집`
+          html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-solid fa-lock"></span> 편집`
         });
         else this.main.push({
           to: doc_action_link(this.data.document, 'edit'),
-          html: `<span style="vertical-align: -0.5px;margin-right: 3px;font-size: 17px;" class="fa fa-solid fa-pen"></span> 편집`
+          html: `<span style="font-size: 1rem;margin-right: 3px;" class="fa fa-soild fa-pen"></span> 편집`
         });
         this.main.push({
           to: doc_action_link(this.data.document, 'discuss'),
@@ -295,26 +299,26 @@ contentTool.init();
           <a href="<%=l.to%>" class="<%=[...'btn btn-secondary tools-btn'.split(' '), l.class].filter(a=>a).join(' ')%>"><%=l.title%><%-l.html%></a>
         <%}%>
       <%}%>
-      <%if(contentTool.menu.length) {%>
-        <div class="dropdown btn btn-secondary tools-btn" x-data="{ open: false }">
-          <div @click="open = !open">
-            <div class="dropdown-toggle">
-              <span class="caret"></span>
-            </div>
-          </div>
-          <div class="open" x-cloak x-show="open" @click="open = false" @click.outside="open = false">
-            <div class="dropdown-menu dropdown-menu-right" role="menu">
-              <%for(let m of contentTool.menu) {%>
-              <%if(m.onclick) {%>
-              <a @click.prevent="<%=m.onclick.toString()%>" href="#" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%><%-m.html%></a>
-              <%} else {%>
-              <a href="<%=m.to%>" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%><%-m.html%></a>
-              <%}%>
-              <%}%>
-            </div>
+    </div>
+    <%if(contentTool.menu.length) {%>
+      <div class="dropdown btn btn-secondary tools-btn" x-data="{ open: false }">
+        <div @click="open = !open">
+          <div class="menu-drop">
+            <span class="fa fa-solid fa-bars menu-drop-btn"></span>
           </div>
         </div>
-      <%}%>
-    </div>
+        <div class="open" x-cloak x-show="open" @click="open = false" @click.outside="open = false">
+          <div class="dropdown-menu dropdown-menu-right" role="menu">
+            <%for(let m of contentTool.menu) {%>
+            <%if(m.onclick) {%>
+            <a @click.prevent="<%=m.onclick.toString()%>" href="#" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%><%-m.html%></a>
+            <%} else {%>
+            <a href="<%=m.to%>" class="<%=['dropdown-item', m.class].filter(a=>a).join(' ')%>"><%=m.title%><%-m.html%></a>
+            <%}%>
+            <%}%>
+          </div>
+        </div>
+      </div>
+    <%}%>
   </div>
 <%}%>

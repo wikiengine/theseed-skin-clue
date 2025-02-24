@@ -120,14 +120,18 @@
     background-color: #970000;
 }
 
-.btn-group>.btn:nth-last-child(2):not(:first-child) {
-    border-bottom-right-radius: 12px !important;
-    border-top-right-radius: 12px !important;
-}
-
-.btn-group>.btn:last-child {
+.btn-group > .dropdown {
     width: 35px;
     height: 35px;
-    margin-left: 10px;
+    margin-left: 10px !important;
     border-radius: 12px !important;
+}
+
+.menu-drop {
+    width: 35px;
+    height: 35px;
+}
+
+.menu-drop-btn {
+    vertical-align: -6.5px;
 }
